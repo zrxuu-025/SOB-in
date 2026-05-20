@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOB-in - Sobat Informasi Penyuluhan Sosial</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+
+    <nav class="bg-blue-600 text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <i class="fa-solid font-bold fa-hands-holding-child text-2xl text-amber-300"></i>
+                <span class="font-bold text-xl tracking-wide">SOB-<span class="text-amber-300">in</span></span>
+            </div>
+            <div class="hidden md:flex space-x-6 font-medium">
+                <a href="#home" class="hover:text-amber-300 transition">Beranda</a>
+                <a href="#edukasi" class="hover:text-amber-300 transition">Materi Penyuluhan</a>
+                <a href="#konsultasi" class="hover:text-amber-300 transition">Hubungi Sobat</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20 px-6 text-center">
+        <div class="max-w-3xl mx-auto">
+            <span class="bg-blue-500/30 text-amber-300 font-semibold px-4 py-1.5 rounded-full text-sm uppercase tracking-wider">Sobat Informasi Anda</span>
+            <h1 class="text-4xl md:text-5xl font-black mt-4 leading-tight">Penyuluhan Sosial Lebih Dekat Bersama SOB-in</h1>
+            <p class="text-indigo-100 text-lg mt-4 max-w-xl mx-auto">Platform digital interaktif untuk mengedukasi, mencegah masalah sosial, dan menghubungkan masyarakat dengan Pekerja Sosial profesional.</p>
+            <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#edukasi" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold px-8 py-3 rounded-xl shadow-lg transition text-center">Mulai Belajar</a>
+                <a href="#konsultasi" class="bg-white/10 hover:bg-white/20 border border-white/30 px-8 py-3 rounded-xl font-semibold transition text-center">Tanya Pekerja Sosial</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="edukasi" class="container mx-auto px-6 py-16">
+        <div class="text-center max-w-xl mx-auto mb-12">
+            <h2 class="text-3xl font-bold text-slate-900">Materi Penyuluhan Sosial</h2>
+            <p class="text-slate-500 mt-2">Akses informasi penting untuk mencegah dan menangani berbagai fenomena sosial di sekitar kita.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-2xl p-6 shadow-xs border border-slate-100 hover:shadow-md transition flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600 text-xl mb-4">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Kesehatan Mental Remaja</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Edukasi mengenai pentingnya menjaga kesehatan mental, mengenali tanda stres, dan cara mencari pertolongan pertama.</p>
+                </div>
+                <button onclick="bukaMateri('mental')" class="mt-4 text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center text-sm cursor-pointer">Baca Selengkapnya <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i></button>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xs border border-slate-100 hover:shadow-md transition flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center text-red-600 text-xl mb-4">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Pencegahan Napza</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Penyuluhan bahaya penyalahgunaan narkoba, psikotropika, dan zat adiktif lainnya, serta memperkuat benteng keluarga.</p>
+                </div>
+                <button onclick="bukaMateri('napza')" class="mt-4 text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center text-sm cursor-pointer">Baca Selengkapnya <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i></button>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xs border border-slate-100 hover:shadow-md transition flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 text-xl mb-4">
+                        <i class="fa-solid fa-people-roof"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Perlindungan Anak</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Sosialisasi hak-hak anak, pencegahan kekerasan dalam rumah tangga (KDRT), dan pola asuh positif di era digital.</p>
+                </div>
+                <button onclick="bukaMateri('anak')" class="mt-4 text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center text-sm cursor-pointer">Baca Selengkapnya <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <div id="modalMateri" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs hidden flex items-center justify-center p-4 z-50 transition-opacity duration-300">
+        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-6 md:p-8 shadow-2xl relative transform scale-95 transition-all duration-300">
+            <button onclick="tutupMateri()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-2xl transition cursor-pointer">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <div id="kontenModal"></div>
+        </div>
+    </div>
+
+    <section id="konsultasi" class="bg-slate-100 py-16 px-6">
+        <div class="max-w-xl mx-auto bg-white rounded-2xl p-8 shadow-sm border border-slate-200">
+            <div class="text-center mb-6">
+                <h2 class="text-2xl font-bold text-slate-900">Hubungi Pekerja Sosial via SOB-in</h2>
+                <p class="text-slate-500 text-sm mt-1">Butuh bimbingan atau ingin melaporkan masalah sosial di lingkunganmu? Kirim pesan di bawah ini.</p>
+            </div>
+
+            <form id="formKonsultasi" onsubmit="kirimPesan(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Nama Lengkap / Anonim</label>
+                    <input type="text" id="nama" required placeholder="Contoh: Budi atau Anonim" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-hidden focus:border-blue-500 transition text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Kategori Masalah</label>
+                    <select id="kategori" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-hidden focus:border-blue-500 transition text-sm">
+                        <option>Kenakalan Remaja</option>
+                        <option>Kekerasan Anak/Keluarga</option>
+                        <option>Konsultasi Kemiskinan/Bantuan Sosial</option>
+                        <option>Lainnya</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Isi Cerita / Laporan</label>
+                    <textarea id="pesan" required rows="4" placeholder="Ceritakan situasi atau pertanyaanmu secara jelas..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-hidden focus:border-blue-500 transition text-sm"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl shadow-md transition cursor-pointer">
+                    <i class="fa-solid fa-paper-plane mr-2"></i> Kirim Laporan
+                </button>
+            </form>
+
+            <div id="notifikasi" class="hidden mt-4 p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl text-sm flex items-start space-x-2">
+                <i class="fa-solid fa-circle-check mt-0.5 text-emerald-600"></i>
+                <div>
+                    <span class="font-bold">Laporan Terkirim!</span> Tim Pekerja Sosial SOB-in akan meninjau pesan Anda dalam waktu 1x24 jam. Terima kasih telah peduli.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 text-center text-sm px-6">
+        <p class="font-medium text-slate-300">&copy; 2026 SOB-in (Sobat Informasi) - Tugas TI Pekerjaan Sosial</p>
+        <p class="mt-1 text-slate-500 text-xs">Dikembangkan khusus untuk simulasi Penyuluhan Sosial Digital - Poltekesos Bandung</p>
+    </footer>
+
+    <script>
+        // --- 1. Gudang Data Konten Modul Penyuluhan ---
+        const dataModul = {
+            mental: {
+                judul: "Modul Penyuluhan: Kesehatan Mental Remaja (Peksos Care)",
+                icon: "fa-brain text-amber-500 bg-amber-50",
+                subbab: [
+                    {
+                        sub: "Apa itu Kesehatan Mental Remaja?",
+                        isi: "Remaja berada pada fase transisi psikologis yang sangat rentan. Kesehatan mental bukan sekadar 'tidak sakit jiwa', melainkan kondisi keberfungsian sosial yang optimal di mana mereka mampu mengatasi stres, menjalin hubungan sehat, dan mengembangkan potensi diri mereka. Tekanan akademik, perundungan (*bullying*), dan paparan media sosial sering kali memicu kecemasan dan stres yang jika tidak ditangani dapat berdampak pada disfungsi keluarga dan sosial."
+                    },
+                    {
+                        sub: "Mengenali Tanda Gejala Sosial-Emosional",
+                        isi: "Sebagai masyarakat yang peduli, kita harus waspada terhadap perubahan perilaku drastis pada remaja. Beberapa indikator antara lain menarik diri dari lingkungan sosial, penurunan prestasi akademik yang tiba-tiba, gangguan tidur/makan, rasa putus asa yang persisten, hingga munculnya niat atau tindakan menyakiti diri sendiri (*self-harm*). Deteksi dini adalah kunci dalam intervensi preventif."
+                    },
+                    {
+                        sub: "Peran Pekerja Sosial dalam Intervensi Preventif & Kuratif",
+                        isi: "Pekerja sosial menggunakan pendekatan makro (advokasi sosial) dan mikro (konseling). Intervensi preventif meliputi pelatihan ketahanan keluarga (*family resilience*), program peer-support (dukungan teman sebaya) di sekolah, dan kampanye anti-stigma. Di sisi kuratif, kami memberikan bimbingan sosial melalui *Case Management* (Manajemen Kasus), memfasilitasi akses rujukan ke psikolog/psikiater jika diperlukan, serta melakukan pendampingan reintegrasi sosial pasca-pemulihan."
+                    }
+                ]
+            },
+            napza: {
+                judul: "Modul Penyuluhan: Pencegahan Napza (Demo Content)",
+                icon: "fa-shield-halved text-red-500 bg-red-50",
+                subbab: [
+                    {
+                        sub: "Pengantar Bahaya Napza",
+                        isi: "Penyalahgunaan Napza bukan hanya menghancurkan kesehatan individu, tetapi juga menyebabkan disfungsi keluarga dan peningkatan kriminalitas. Konten mendetail akan ditambahkan di versi resmi SOB-in."
+                    },
+                    {
+                        sub: "Strategi Pencegahan Komunitas",
+                        isi: "Isi materi mendetail mengenai strategi pencegahan berbasis komunitas akan segera menyusul."
+                    }
+                ]
+            },
+            anak: {
+                judul: "Modul Penyuluhan: Sistem Perlindungan Anak (Demo Content)",
+                icon: "fa-people-roof text-emerald-500 bg-emerald-50",
+                subbab: [
+                    {
+                        sub: "Hak Dasar Anak & UU Perlindungan Anak",
+                        isi: "Setiap anak berhak atas perlindungan dari kekerasan, eksploitasi, dan penelantaran. Konten mendetail mengenai hak dasar akan segera ditambahkan."
+                    },
+                    {
+                        sub: "Alur Pelaporan & Satuan Bakti Peksos (Sakti Peksos)",
+                        isi: "Isi materi mendetail mengenai alur pelaporan nyata di lapangan akan segera menyusul."
+                    }
+                ]
+            }
+        };
+
+        // --- 2. Fungsi Membuka Modal Modul ---
+        function bukaMateri(kunci) {
+            // Ambil data berdasarkan kunci (mental, napza, anak)
+            const data = dataModul[kunci];
+            if (!data) return; // Jika tidak ada data, batalkan
+
+            // Buat struktur HTML dinamis untuk dimasukkan ke pop-up
+            let htmlKonten = `
+                <div class="flex items-center space-x-4 mb-6 border-b border-slate-100 pb-4">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl ${data.icon}">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <h2 class="text-2xl font-extrabold text-slate-900">${data.judul}</h2>
+                </div>
+                <div class="space-y-6 text-slate-600 leading-relaxed text-sm md:text-base">
+            `;
+
+            // Loop untuk setiap subbab materi
+            data.subbab.forEach(item => {
+                htmlKonten += `
+                    <div>
+                        <h4 class="font-bold text-slate-800 text-base mb-1.5">${item.sub}</h4>
+                        <p class="text-slate-600">${item.isi}</p>
+                    </div>
+                `;
+            });
+
+            // Tutup tag HTML konten
+            htmlKonten += `
+                </div>
+                <div class="mt-8 pt-4 border-t border-slate-100 flex justify-end">
+                    <button onclick="tutupMateri()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-5 py-2.5 rounded-xl text-sm transition cursor-pointer">Selesai Membaca</button>
+                </div>
+            `;
+
+            // Masukkan HTML ke elemen penampung di pop-up
+            document.getElementById('kontenModal').innerHTML = htmlKonten;
+            // Tampilkan pop-up dengan menghapus kelas 'hidden'
+            document.getElementById('modalMateri').classList.remove('hidden');
+            // Kunci scroll layar utama di belakang
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        // --- 3. Fungsi Menutup Modal Modul ---
+        function tutupMateri() {
+            // Sembunyikan pop-up kembali dengan menambahkan kelas 'hidden'
+            document.getElementById('modalMateri').classList.add('hidden');
+            // Aktifkan kembali scroll layar utama
+            document.body.style.overflow = 'auto'; 
+        }
+
+        // --- 4. Fungsi Simulasi Formulir ---
+        function kirimPesan(event) {
+            event.preventDefault();
+            document.getElementById('notifikasi').classList.remove('hidden');
+            document.getElementById('formKonsultasi').reset();
+            
+            setTimeout(() => {
+                document.getElementById('notifikasi').classList.add('hidden');
+            }, 6000);
+        }
+    </script>
+</body>
+</html>
