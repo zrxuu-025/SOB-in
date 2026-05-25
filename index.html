@@ -125,10 +125,20 @@
                 <p class="text-gray-400 mb-6 text-sm leading-relaxed">Fasilitas e-counseling gratis bagi remaja, mahasiswa, maupun masyarakat umum. Tersedia narahubung Pekerja Sosial tersertifikasi untuk bimbingan.</p>
                 
                 <div class="space-y-4">
-                    <a href="https://wa.me/6281466793517" target="_blank" class="block bg-gray-800 hover:bg-gray-700 border border-gray-700 p-4 rounded-xl flex items-center justify-between transition shadow-sm">
+                    <<a href="https://wa.me/6281466793517" target="_blank" class="block bg-gray-800 hover:bg-gray-700 border border-gray-700 p-4 rounded-xl flex items-center justify-between transition shadow-sm">
+    <div class="flex items-center gap-3">
+        <i class="fa-brands fa-whatsapp text-2xl text-green-400"></i>
+        <div>
+            <span class="font-semibold text-sm block text-white">Chat Peksos via WhatsApp</span>
+            <span class="text-xs text-green-400 font-medium">081466793517</span>
+        </div>
+    </div>
+    <i class="fa-solid fa-chevron-right text-gray-500"></i>
+</a>
+                    <a href="#" class="block bg-gray-800 hover:bg-gray-700 border border-gray-700 p-4 rounded-xl flex items-center justify-between transition shadow-sm">
                         <div class="flex items-center gap-3">
-                            <i class="fa-brands fa-whatsapp text-2xl text-green-400"></i>
-                            <span class="font-semibold text-sm">Chat Peksos via WhatsApp</span>
+                            <i class="fa-regular fa-calendar-check text-2xl text-blue-400"></i>
+                            <span class="font-semibold text-sm">Jadwalkan Konseling Zoom</span>
                         </div>
                         <i class="fa-solid fa-chevron-right text-gray-500"></i>
                     </a>
@@ -140,7 +150,130 @@
                 <h2 class="text-2xl font-bold mb-2"><i class="fa-solid fa-bullhorn text-red-600 mr-2"></i> Ruang Pengaduan</h2>
                 <p class="text-gray-500 text-xs mb-6">Laporkan masalah sosial (kekerasan, eksploitasi) di lingkungan Anda secara rahasia.</p>
                 
-                <form id="formPengaduan" onsubmit="kirimKeWhatsApp(event)" class="space-y-4">
+                <form action="https://formspree.io/f/KODE_KAMU_DISINI" method="POST" class="space-y-4">
                     <div>
                         <label class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">Nama (Boleh Anonim)</label>
-                        <input type="text" id="waNama" class="w-full px-4 py-2 bg-gray-5
+                        <input type="text" name="nama" class="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-sm transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">Kategori Laporan</label>
+                        <select name="kategori" class="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-sm transition">
+                            <option>Kekerasan Anak / KDRT</option>
+                            <option>Eksploitasi / Perdagangan Orang</option>
+                            <option>Orang Terlantar / Darurat Bantuan</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">Detail Kejadian</label>
+                        <textarea name="pesan" rows="3" class="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-sm transition" placeholder="Lokasi, waktu, dan kronologi..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg transition shadow-md flex justify-center items-center gap-2 cursor-pointer">
+                        <i class="fa-solid fa-paper-plane"></i> Kirim Laporan Cepat
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div id="modalEdukasi" class="fixed inset-0 bg-black/80 z-[100] hidden flex items-center justify-center p-4 transition-opacity duration-300 backdrop-blur-sm">
+        <div class="bg-white rounded-2xl w-full max-w-3xl max-h-[90vh] flex flex-col shadow-2xl relative">
+            <div class="flex justify-between items-center p-5 border-b border-gray-100">
+                <h3 id="judulModal" class="text-xl font-bold text-gray-800 flex items-center gap-3">
+                    </h3>
+                <button onclick="tutupEdukasi()" class="text-gray-400 hover:text-red-500 transition text-3xl font-bold cursor-pointer leading-none">&times;</button>
+            </div>
+            
+            <div id="kontenModalEdukasi" class="p-6 overflow-y-auto text-gray-700 w-full">
+                </div>
+            
+            <div class="p-4 border-t border-gray-100 text-right bg-gray-50 rounded-b-2xl">
+                <button onclick="tutupEdukasi()" class="bg-gray-800 hover:bg-gray-900 text-white px-6 py-2 rounded-lg text-sm font-bold transition cursor-pointer">Tutup Jendela</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-gray-950 text-gray-500 py-6 text-center text-xs">
+        <p>© 2026 SOB-in. Dikembangkan berdasarkan adaptasi arsitektur informasi kebencanaan.</p>
+    </footer>
+
+    <script>
+        const dataEdukasi = {
+            artikel: {
+                judul: '<i class="fa-solid fa-file-lines text-blue-500"></i> Kumpulan Artikel Edukasi',
+                konten: `
+                    <div class="space-y-6">
+                        <div class="bg-blue-50 p-5 rounded-xl border-l-4 border-blue-500">
+                            <h4 class="font-bold text-gray-900 text-lg mb-2">1. Mengenal Profesi Pekerja Sosial (Peksos)</h4>
+                            <p class="text-sm text-gray-700 mb-4 leading-relaxed">Pekerja Sosial bukan sekadar relawan biasa. Ketahui lebih dalam mengenai profesi Pekerja Sosial, peran strategis, ranah kerja, dan tanggung jawabnya dalam memulihkan keberfungsian sosial masyarakat.</p>
+                            <a href="https://maukuliah.id/jobs/pekerja-sosial" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition shadow-sm">
+                                Baca Artikel Lengkap <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <div class="bg-green-50 p-5 rounded-xl border-l-4 border-green-500">
+                            <h4 class="font-bold text-gray-900 text-lg mb-2">2. Cara Membangun Keluarga yang Bahagia & Harmonis</h4>
+                            <p class="text-sm text-gray-700 mb-4 leading-relaxed">Keluarga adalah unit terkecil dan fondasi utama dalam mencegah terjadinya patologi sosial. Temukan berbagai tips aplikatif untuk membangun keharmonisan dan ketahanan di dalam rumah tangga.</p>
+                            <a href="https://www.sunlife.co.id/id/life-moments/building-a-family/ciri-ciri-keluarga-bahagia/" target="_blank" class="inline-block bg-green-600 hover:bg-green-700 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition shadow-sm">
+                                Baca Artikel Lengkap <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                `
+            },
+            video: {
+                judul: '<i class="fa-solid fa-video text-red-500"></i> Galeri Video Penyuluhan',
+                konten: `
+                    <div class="space-y-10">
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-lg mb-3">1. Kekerasan Dalam Rumah Tangga (KDRT)</h4>
+                            <div class="relative w-full rounded-xl overflow-hidden shadow-md border border-gray-200 bg-gray-100" style="padding-top: 56.25%;">
+                                <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/0RzmN2HqnPk" title="Edukasi KDRT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-lg mb-3">2. Edukasi Pencegahan Kekerasan Terhadap Anak</h4>
+                            <div class="relative w-full rounded-xl overflow-hidden shadow-md border border-gray-200 bg-gray-100" style="padding-top: 56.25%;">
+                                <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/YkTne6t1WdU" title="Edukasi Kekerasan Anak" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-lg mb-3">3. Cegah & Laporkan Tindak Pidana Perdagangan Orang (TPPO)</h4>
+                            <div class="relative w-full rounded-xl overflow-hidden shadow-md border border-gray-200 bg-gray-100" style="padding-top: 56.25%;">
+                                <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/1jOhatqh21U" title="Edukasi Human Trafficking" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                `
+            }
+        };
+
+        // Fungsi membuka modal
+        function bukaEdukasi(kunci) {
+            const data = dataEdukasi[kunci];
+            if (!data) return;
+
+            // Masukkan data ke dalam HTML Modal
+            document.getElementById('judulModal').innerHTML = data.judul;
+            document.getElementById('kontenModalEdukasi').innerHTML = data.konten;
+            
+            // Tampilkan Modal
+            const modal = document.getElementById('modalEdukasi');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Kunci scroll layar utama
+        }
+
+        // Fungsi menutup modal
+        function tutupEdukasi() {
+            const modal = document.getElementById('modalEdukasi');
+            modal.classList.add('hidden');
+            
+            // Kosongkan HTML agar video YouTube langsung mati (stop) saat modal ditutup
+            document.getElementById('kontenModalEdukasi').innerHTML = '';
+            
+            document.body.style.overflow = 'auto'; // Aktifkan scroll lagi
+        }
+    </script>
+</body>
+</html>
